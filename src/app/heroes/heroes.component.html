@@ -1,0 +1,22 @@
+<div>
+
+    @for (hero of heroes; track hero.id) {
+    <div>
+
+        <button (click)="selectHero(hero)" class="flex min-w-48 rounded-lg overflow-hidden my-5"
+            [ngClass]="{'border-red-500 border-8': selectedHero === hero}">
+
+            <div class="w-10 h-10 shrink-0 bg-orange-400 text-white flex items-center justify-center">{{ hero.id }}
+            </div>
+            <div class="h-10 bg-slate-400 flex items-center text-white px-5 w-full">{{hero.name}}</div>
+
+        </button>
+    </div>
+    }
+
+    <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+
+
+
+</div>
